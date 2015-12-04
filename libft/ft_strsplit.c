@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 14:08:02 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/04 22:07:30 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/04 22:59:42 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,3 @@ char	**ft_strsplit(char const *s, char c)
 	}	
 	return (str);
 }
-/*
-int	main()
-{
-	int	i = 0;
-	char **split;
-
-	split = ft_strsplit("******hel*****lo***", '*');
-	while (split && split[i])
-	{
-		ft_putstr(split[i]);
-		ft_putchar('\n');
-		i++;
-	}
-	return (0);
-}*/
