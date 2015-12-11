@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_intsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:21:33 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/05 17:49:11 by stmartin         ###   ########.fr       */
+/*   Created: 2015/12/07 13:39:52 by stmartin          #+#    #+#             */
+/*   Updated: 2015/12/08 14:59:59 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+size_t		ft_intsize(int nb)
 {
-	char			*str;
-	unsigned int	i;
+	size_t	intsize;
 
-	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	if (!s || !str)
-		return (0);
-	while (i < len)
+	if (nb == 0)
+		return (1);
+	intsize = 0;
+	if (nb < 0)
 	{
-		str[i] = s[start + i];
-		i++;
+		intsize++;
+		nb = -nb;
 	}
-	str[i] = 0;
-	return (str);
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		intsize++;
+	}
+	return (intsize);
 }

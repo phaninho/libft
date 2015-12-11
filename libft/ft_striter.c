@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:21:33 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/05 17:49:11 by stmartin         ###   ########.fr       */
+/*   Created: 2015/12/08 19:12:55 by stmartin          #+#    #+#             */
+/*   Updated: 2015/12/08 19:43:06 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	char			*str;
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	if (!s || !str)
-		return (0);
-	while (i < len)
+	if (s == NULL || f == NULL)
+		return ;
+	while (s && s[i])
 	{
-		str[i] = s[start + i];
+		f(&(s[i]));
 		i++;
 	}
-	str[i] = 0;
-	return (str);
 }

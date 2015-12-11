@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 20:24:45 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/04 21:02:55 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/05 22:59:28 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,23 @@ size_t	*ft_word_len(const char *s, char c, size_t *wordlen)
 
 	i = 0;
 	word = 0;
+	ltr = ft_strlen(s);
 	while (s && s[i])
 	{
-		ltr = 0;
 		i = ft_move_sign(s, c, i);
+		if (i == ltr)
+			return (0);
+		ltr = 0;
 		while (s[i] && s[i] != c)
 		{
 			i++;
 			ltr++;
 		}
 		if (ltr != 0)
-			wordlen[word++] = ltr;
+		{
+			wordlen[word] = ltr;
+			word++;
+		}
 		i++;
 	}
 	return (wordlen);

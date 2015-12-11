@@ -6,12 +6,12 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:06:19 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/04 22:19:56 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/11 13:09:45 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	LIBFT_H
- #define LIBFT_H
+#define LIBFT_H
 
 #include <unistd.h>
 #include <stdio.h>
@@ -20,6 +20,13 @@
 #include <ctype.h>
 #include <xlocale.h>
 #include <strings.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -68,7 +75,20 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
+char	*ft_itoa(int n);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+void	ft_strrev(char *str);
+size_t	ft_intsize(int n);
 int		ft_isspace(int c);
 size_t	ft_countword_btwsign(const char *s, char c);
 size_t	*ft_word_len(const char *s, char c, size_t *len);

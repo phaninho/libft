@@ -5,42 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/03 14:08:02 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/04 22:59:42 by stmartin         ###   ########.fr       */
+/*   Created: 2015/12/06 17:04:04 by stmartin          #+#    #+#             */
+/*   Updated: 2015/12/06 20:05:11 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char	**str;
-	size_t	*wordlen;
-	size_t	word;
+	char	**split;
 	size_t	i;
+	size_t	j;
 	size_t	n;
+	size_t	word;
 
 	i = 0;
-	word = ft_countword_btwsign(s, c);
-	if (word == 0)
-		return (NULL);
-	if (!(wordlen = (size_t *)malloc(sizeof(size_t) * word)))
-		return (NULL);
-	wordlen = ft_word_len(s, c, wordlen);
-	if (!(str = (char **)malloc(sizeof(char *) * word + 1)))
-		return (NULL);
-	str[word] = NULL;
 	n = 0;
-	while (s[i] && n <= word)
+	word = ft_countword_btwsign(s, c);
+	if	(!(split = (char**)malloc(sizeof(char*) * (word + 1))))
+		return (NULL);
+	split[word] = NULL;
+	while (n < word)
 	{
-		if (s[i] == c)
-			i = ft_move_sign(&s[i], c, i);
-		str[n] = ft_strsub(s, i, wordlen[n]);
-		i = i + wordlen[n];
-		while (s[i] == c)
+		j = 0;
+		while (s[i] && s[i] == c)
 			i++;
-		n++;
-	}	
-	return (str);
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			j++;
+		}
+		split[n++] = ft_strsub(s, (i - j), j);
+	}
+	return (split);
 }

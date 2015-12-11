@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:21:33 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/05 17:49:11 by stmartin         ###   ########.fr       */
+/*   Created: 2015/12/11 12:49:20 by stmartin          #+#    #+#             */
+/*   Updated: 2015/12/11 13:06:45 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	char			*str;
-	unsigned int	i;
-
-	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	if (!s || !str)
-		return (0);
-	while (i < len)
+	if (alst && *alst)
 	{
-		str[i] = s[start + i];
-		i++;
+		del((*alst)->content, (*alst)->content_size );
+		(*alst) = NULL;
 	}
-	str[i] = 0;
-	return (str);
 }

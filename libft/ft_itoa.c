@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:21:33 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/05 17:49:11 by stmartin         ###   ########.fr       */
+/*   Created: 2015/12/06 20:05:55 by stmartin          #+#    #+#             */
+/*   Updated: 2015/12/08 19:03:09 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
-	char			*str;
-	unsigned int	i;
+	size_t	i;
+	size_t	intsize;
+	char	*nb;
 
 	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	intsize = ft_intsize(n);
+	if (!(nb = (char*)malloc(sizeof(char) * (intsize + 1))))
 		return (NULL);
-	if (!s || !str)
-		return (0);
-	while (i < len)
+	nb[intsize] = '\0';
+	if (n < 0)
 	{
-		str[i] = s[start + i];
-		i++;
+		nb[intsize - 1] = '-';
+		n = -n;
 	}
-	str[i] = 0;
-	return (str);
+	while (i < intsize)
+	{
+		nb[i] = n % 10 + '0';
+		n = n / 10;
+		i++;
+		if (nb[i] == '-')
+			i++;
+	}
+	ft_strrev(nb);
+	return (nb);
 }

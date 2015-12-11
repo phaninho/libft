@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/16 21:39:09 by qperez           ###   ########.fr       */
+/*   Updated: 2015/12/11 21:47:03 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,14 +204,14 @@ int					main(void)
 	D_ADD_TEST(strdel);
 #define	D_STRCLR
 	D_ADD_TEST(strclr);
-//#define	D_STRITER
-//	D_ADD_TEST(striter);
-//#define	D_STRITERI
-//	D_ADD_TEST(striteri);
-//#define	D_STRMAP
-//	D_ADD_TEST(strmap);
-//#define	D_STRMAPI
-//	D_ADD_TEST(strmapi);
+#define	D_STRITER
+	D_ADD_TEST(striter);
+#define	D_STRITERI
+	D_ADD_TEST(striteri);
+#define	D_STRMAP
+	D_ADD_TEST(strmap);
+#define	D_STRMAPI
+	D_ADD_TEST(strmapi);
 #define	D_STREQU
 	D_ADD_TEST(strequ);
 #define	D_STRNEQU
@@ -222,20 +222,20 @@ int					main(void)
 	D_ADD_TEST(strjoin);
 #define	D_STRSPLIT
 	D_ADD_TEST(strsplit);
-//#define	D_ITOA
-//	D_ADD_TEST(itoa);
+#define	D_ITOA
+	D_ADD_TEST(itoa);
 #define	D_STRTRIM
 	D_ADD_TEST(strtrim);
-//#define	D_LSTNEW
-//	D_ADD_TEST(lstnew);
-//#define	D_LSTDELONE
-//	D_ADD_TEST(lstdelone);
-//#define	D_LSTDEL
-//	D_ADD_TEST(lstdel);
-//#define	D_LSTADD
-//	D_ADD_TEST(lstadd);
-//#define	D_LSTITER
-//	D_ADD_TEST(lstiter);
+#define	D_LSTNEW
+	D_ADD_TEST(lstnew);
+#define	D_LSTDELONE
+	D_ADD_TEST(lstdelone);
+#define	D_LSTDEL
+	D_ADD_TEST(lstdel);
+#define	D_LSTADD
+	D_ADD_TEST(lstadd);
+#define	D_LSTITER
+	D_ADD_TEST(lstiter);
 //#define D_LSTMAP
 //	D_ADD_TEST(lstmap);
 	while (test[i].set == true)
@@ -513,7 +513,7 @@ int					uf_test_strsplit(void)
 	ft_strsplit(NULL, 0);
 	ft_strsplit(NULL, 'a');
 	ret = ft_strsplit("", '*');
-	if (ret == NULL || ret[0] != NULL)
+	if (ret == NULL || ret[0] != NULL) 
 	{
 		printf("Error Line %d, Funct %s : \
 			   \nYour function has return NULL or the first pointer in your tab is NULL\n", __LINE__ - 2, __func__);
