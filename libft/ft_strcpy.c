@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 08:54:04 by stmartin          #+#    #+#             */
-/*   Updated: 2015/11/26 11:07:53 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/12 23:11:59 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strcpy(char *dst, const char *src)
 	int	i;
 
 	i = 0;
-	while (src && src[i])
+	while (src[i])
 	{
 		dst[i] = src[i];
 		i++;

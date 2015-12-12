@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 14:00:13 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/02 14:59:06 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/13 00:01:37 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_strclr(char *s)
 {
 	size_t	len;
 
+	if (!s)
+		return ;
 	len = ft_strlen(s);
 	ft_bzero(s, len);
 }
