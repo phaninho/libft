@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 17:04:04 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/06 20:05:11 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/13 23:12:37 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	n = 0;
 	word = ft_countword_btwsign(s, c);
-	if	(!(split = (char**)malloc(sizeof(char*) * (word + 1))))
+	if (!(split = (char**)malloc(sizeof(char*) * (word + 1))))
 		return (NULL);
 	split[word] = NULL;
 	while (n < word)

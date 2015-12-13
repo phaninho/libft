@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 17:55:20 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/13 00:15:25 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/13 23:17:31 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strtrim(char const *s)
 
 	start = 0;
 	end = 0;
-	if(!(len = ft_strlen(s)))
-		return (ft_strdup(s));
-	lenstr = len;
 	if (!s)
 		return (NULL);
+	if (!(len = ft_strlen(s)))
+		return (ft_strdup(s));
+	lenstr = len;
 	while (s && s[start] && (ft_isspace((int)s[start]) == 1))
 		start++;
 	while (s && len > 0 && (ft_isspace((int)s[len - 1]) == 1))

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 12:22:00 by stmartin          #+#    #+#             */
-/*   Updated: 2015/11/26 11:10:36 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/13 23:14:24 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c -  32);
-	else 
+		return (c - 32);
+	else
 		return (c);
 }
