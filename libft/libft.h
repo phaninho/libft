@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:06:19 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/11 13:09:45 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/14 17:04:58 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,5 @@ void	ft_strrev(char *str);
 size_t	ft_intsize(int n);
 int		ft_isspace(int c);
 size_t	ft_countword_btwsign(const char *s, char c);
-size_t	*ft_word_len(const char *s, char c, size_t *len);
 size_t	ft_move_sign(const char *s, char c, size_t n);
 #endif

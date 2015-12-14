@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 17:07:49 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/12 23:41:56 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/14 16:26:23 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 		else
 		{
 			j = 0;
-			i = last;
-			last++;
+			i = last++;
 		}
 		i++;
 	}

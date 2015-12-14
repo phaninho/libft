@@ -6,7 +6,7 @@
 #    By: stmartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/12 22:04:11 by stmartin          #+#    #+#              #
-#    Updated: 2015/12/12 23:00:34 by stmartin         ###   ########.fr        #
+#    Updated: 2015/12/14 17:05:36 by stmartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC_NAME = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 		   ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		   ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
 		   ft_lstiter.c ft_lstmap.c ft_isspace.c ft_strrev.c ft_intsize.c \
-		   ft_countword_btwsign.c ft_word_len.c ft_move_sign.c
+		   ft_countword_btwsign.c ft_move_sign.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB_NAME =
 NAME = libft.a

@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2015/12/11 21:47:03 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/12 19:49:50 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,8 +236,8 @@ int					main(void)
 	D_ADD_TEST(lstadd);
 #define	D_LSTITER
 	D_ADD_TEST(lstiter);
-//#define D_LSTMAP
-//	D_ADD_TEST(lstmap);
+#define D_LSTMAP
+	D_ADD_TEST(lstmap);
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);
@@ -296,7 +296,7 @@ t_list		*uf_testmap(t_list *elem)
 
 	content = ft_strdup((char *)(elem->content));
 	i = 0;
-	while (i < ft_strlen(content))
+	while ((size_t)i < ft_strlen(content))
 	{
 		content[i] += 1;
 		++i;
