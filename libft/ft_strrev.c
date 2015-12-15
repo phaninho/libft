@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 14:16:32 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/13 23:10:06 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/14 20:48:44 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_strrev(char *str)
 	char	s;
 
 	i = 0;
+	if (!str)
+		return ;
 	len = ft_strlen(str);
 	len--;
 	while (len > i)

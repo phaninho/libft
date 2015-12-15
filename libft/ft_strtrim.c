@@ -6,37 +6,36 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 17:55:20 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/13 23:17:31 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/15 19:23:01 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	fk_isspace(int c)
+{
+	if (c == ' ' || c == '\n' || c == '\t')
+		return (1);
+	return (0);
+}
+
 char	*ft_strtrim(char const *s)
 {
-	size_t	start;
-	size_t	end;
 	size_t	len;
-	size_t	lenstr;
 	char	*str;
 
-	start = 0;
-	end = 0;
+	len = 0;
 	if (!s)
 		return (NULL);
+	while (*s && fk_isspace((int)*s) == 1)
+		s++;
 	if (!(len = ft_strlen(s)))
 		return (ft_strdup(s));
-	lenstr = len;
-	while (s && s[start] && (ft_isspace((int)s[start]) == 1))
-		start++;
-	while (s && len > 0 && (ft_isspace((int)s[len - 1]) == 1))
-	{
+	while (fk_isspace((int)s[len - 1]) == 1)
 		len--;
-		end++;
-	}
-	if (start == end)
-		start = 0;
-	lenstr = lenstr - (start + end);
-	str = ft_strsub(s, start, lenstr);
+	if (!(str = (char *)malloc(sizeof(char) * len)))
+		return (NULL);
+	str = ft_strsub(s, 0, len);
 	return (str);
 }
+

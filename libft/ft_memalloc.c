@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 14:21:47 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/05 17:49:57 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/15 12:34:05 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	*ft_memalloc(size_t size)
 
 	if (size == 0)
 		return (NULL);
-	str = malloc(size);
-	if (!(str))
+	if (!(str = malloc(size)))
 		return (NULL);
 	ft_bzero(str, size);
 	return (str);

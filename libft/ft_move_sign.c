@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 20:20:47 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/04 21:00:24 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/14 21:30:46 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 size_t	ft_move_sign(const char *s, char c, size_t i)
 {
+	if (!s || !*s)
+		return (0);
 	while ((s && s[i]) && s[i] == c)
 		i++;
 	return (i);
