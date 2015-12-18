@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 17:55:20 by stmartin          #+#    #+#             */
-/*   Updated: 2015/12/15 19:23:01 by stmartin         ###   ########.fr       */
+/*   Updated: 2015/12/18 19:01:56 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	fk_isspace(int c)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	size_t	len;
 	char	*str;
@@ -38,4 +38,3 @@ char	*ft_strtrim(char const *s)
 	str = ft_strsub(s, 0, len);
 	return (str);
 }
-
