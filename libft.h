@@ -17,6 +17,16 @@
 # include <string.h>
 # include <stdlib.h>
 
+# define BUFF_SIZE 3
+
+typedef struct		s_line
+{
+	int				oct;
+	char			*tmp;
+	char			*chr;
+	char			*buff;
+}					t_line;
+
 typedef struct		s_list
 {
 	void			*content;
@@ -24,6 +34,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					get_next_line(int fd, char **line);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
