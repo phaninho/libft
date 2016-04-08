@@ -6,7 +6,7 @@
 #    By: stmartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/12 22:04:11 by stmartin          #+#    #+#              #
-#    Updated: 2015/12/15 20:50:33 by stmartin         ###   ########.fr        #
+#    Updated: 2016/04/08 23:23:17 by stmartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ OBJ_PATH = ./
 INC_PATH = ./
 LIB_PATH = ./
 
-SRC_NAME = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
-		   ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c \
+SRC_NAME = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_swap.c \
+		   ft_abs.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c \
 		   ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 		   ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
 		   ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
@@ -30,7 +30,7 @@ SRC_NAME = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 		   ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		   ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
 		   ft_lstiter.c ft_lstmap.c ft_isspace.c ft_strrev.c ft_intsize.c \
-		   ft_countword_btwsign.c ft_move_sign.c get_next_line.c
+		   ft_countword_btwsign.c ft_move_sign.c get_next_line.c ft_tabdel.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB_NAME =
 NAME = libft.a
@@ -54,10 +54,10 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
 clean:
-	rm -fv $(OBJ)
+	@rm -fv $(OBJ)
 
 fclean: clean
-	rm -fv $(NAME)
+	@rm -fv $(NAME)
 
 re: fclean all
 
